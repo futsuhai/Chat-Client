@@ -1,0 +1,33 @@
+:root {
+    // fonts
+    --font-family: "Inter", sans-serif;
+    --second-family: "Asap", sans-serif;
+
+    // colors
+    --white: #FFF;
+    --gray: #E2E8F0;
+    --grey-light: #C0C6C9;
+    --grey-scale: #ECECEC;
+    --violet-primary: #615EF0;
+    --red: #FF3D00;
+    --red-light: #FFEFEF;
+    --black: #000;
+
+    // sizes
+    --content-width: 1440px;
+    --content-height: 1024px;
+
+    // text-sizes-base
+    --text-size-xs: 0.75rem;
+    --text-size-s: 1rem;
+    --text-size-m: 1.125rem;
+    --text-size-xm: 1.25rem;
+    --text-size-l: 1.5rem;
+    --text-size-xl: 2.25rem;
+    --text-size-xxl: 3rem;
+
+    // text-sizes-addictional
+    --text-size-logo: 1.3125rem;
+    --text-size-link: 0.875rem;
+
+}

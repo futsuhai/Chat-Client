@@ -1,0 +1,18 @@
+@import "src/app/styles/mixins";
+
+.logo-component {
+    &__title {
+        color: var(--violet-primary);
+        font-weight: 700;
+        font-family: var(--secont-family);
+        font-size: var(--text-size-m);
+    }
+}
+
+@include sm {
+    .logo-component {
+        &__title {
+            width: 220px;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+<form class="auth-form" [formGroup]="registerBasicForm" (ngSubmit)="submitRegisterBasicForm()">
+    <div class="auth-inputs">
+        <div class="title">
+            <p class="title__stage-title">
+                Basic information
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="login" class="form-group__label">Login</label>
+            <input
+                formControlName="login"
+                id="login" type="text"
+                class="input_base input_auth form-group__input"
+                [ngClass]="{'input_invalid': (login?.touched && login?.invalid)}">
+            <span
+                [hidden]="login?.valid || login?.untouched"
+                class="form-group__alert">
+                    <ng-container *ngIf="login?.hasError('required')">
+                        Field is required
+                    </ng-container>
+                    <ng-container *ngIf="login?.hasError('minlength')">
+                        Minimum length of login is 4 characters
+                    </ng-container>
+                    <ng-container *ngIf="login?.hasError('maxlength')">
+                        Maximum length of login is 12 characters
+                    </ng-container>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-group__label">Email</label>
+            <input
+                formControlName="email"
+                id="email" type="email"
+                class="input_base input_auth form-group__input"
+                [ngClass]="{'input_invalid': (email?.touched && email?.invalid)}">
+            <span
+                [hidden]="email?.valid || email?.untouched"
+                class="form-group__alert">
+                    <ng-container *ngIf="email?.hasError('required')">
+                        Field is required
+                    </ng-container>
+                    <ng-container *ngIf="email?.hasError('email')">
+                        Incorrenc email
+                    </ng-container>
+            </span>
+        </div>
+        <div class="form-group-row">
+            <div class="form-group">
+                <label for="name" class="form-group__label">Name</label>
+                <input
+                    formControlName="name"
+                    id="name" type="text"
+                    class="input_base input_auth form-group__input-short"
+                    [ngClass]="{'input_invalid': (name?.touched && name?.invalid)}">
+                <span
+                    [hidden]="name?.valid || name?.untouched"
+                    class="form-group__alert">
+                        <ng-container *ngIf="name?.hasError('required')">
+                            Field is required
+                        </ng-container>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="surname" class="form-group__label">Surname</label>
+                <input
+                    formControlName="surname"
+                    id="surname" type="text"
+                    class="input_base input_auth form-group__input-short"
+                    [ngClass]="{'input_invalid': (surname?.touched && surname?.invalid)}">
+                <span
+                    [hidden]="surname?.valid || surname?.untouched"
+                    class="form-group__alert">
+                        <ng-container *ngIf="surname?.hasError('required')">
+                            Field is required
+                        </ng-container>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-group__label">Password</label>
+            <input
+                formControlName="password"
+                id="password" type="password"
+                class="input_base input_auth form-group__input"
+                [ngClass]="{'input_invalid': (password?.touched && password?.invalid)}">
+            <span
+                [hidden]="password?.valid || password?.untouched"
+                class="form-group__alert">
+                    <ng-container *ngIf="password?.hasError('required')">
+                        Field is required
+                    </ng-container>
+                    <ng-container *ngIf="password?.hasError('pattern')">
+                        Password is incorrect
+                    </ng-container>
+            </span>
+        </div>
+        <div class="form-group-row">
+            <div class="form-group">
+                <label for="city" class="form-group__label">City</label>
+                <input
+                    formControlName="city"
+                    id="city" type="text"
+                    class="input_base input_auth form-group__input-short"
+                    [ngClass]="{'input_invalid': (city?.touched && city?.invalid)}">
+                <span
+                    [hidden]="city?.valid || city?.untouched"
+                    class="form-group__alert">
+                        <ng-container *ngIf="city?.hasError('required')">
+                            Field is required
+                        </ng-container>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="age" class="form-group__label">Age</label>
+                <input
+                    formControlName="age"
+                    id="age" type="number"
+                    class="input_base input_auth form-group__input-short"
+                    [ngClass]="{'input_invalid': (age?.touched && age?.invalid)}">
+                <span
+                    [hidden]="age?.valid || age?.untouched"
+                    class="form-group__alert">
+                        <ng-container *ngIf="age?.hasError('required')">
+                            Field is required
+                        </ng-container>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <button type="submit" class="button-wrapper__button button_primary">
+            Continue
+        </button>
+    </div>
+</form>

@@ -1,0 +1,30 @@
+<form class="auth-form" [formGroup]="registerSpecForm" (ngSubmit)="submitRegisterSpecForm()">
+    <div class="auth-inputs">
+        <div class="title">
+            <button type="button" class="title__back button_empty" (click)="backToPreviousStage()">
+                <img src="assets/common/arrow-back.svg" alt="back" class="title__back-icon">
+            </button>
+            <p class="title__stage-title">
+                Specialization
+            </p>
+        </div>
+        <div class="specializations">
+            <div *ngFor="let spec of specializations; let i = index;" class="checkbox">
+                <label class="check">
+                    <input 
+                        formControlName="spec{{i + 1}}" class="check__input" 
+                        type="checkbox" id="checkbox" [value]="spec">
+                    <span class="check__box"></span>
+                </label>
+                <p class="checkbox__label">
+                    {{ spec }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <button type="submit" class="button-wrapper__button button_primary">
+            Sign up
+        </button>
+    </div>
+</form>

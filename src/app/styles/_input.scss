@@ -1,0 +1,31 @@
+.input {
+    &_base {
+        font-size: var(--text-size-s);
+        color: var(--black);
+        border-radius: 12px;
+        border: 2px solid var(--gray);
+        background: var(--white);
+        padding: 10px 20px;
+        height: 48px;
+        outline: none;
+
+        &:hover, &:focus, &:active {
+            border: 2px solid var(--gray);
+        }
+    }
+
+    &_auth {
+        &:hover, &:focus, &:active {
+            border: 2px solid var(--violet-primary);
+        }
+    }
+
+    &_invalid {
+        border: 2px solid var(--red);
+        background: var(--red-light);
+
+        &:hover, &:focus, &:active {
+            border: 2px solid var(--red);
+        }
+    }
+}

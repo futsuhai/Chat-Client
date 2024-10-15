@@ -1,0 +1,11 @@
+.test {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.t {
+    max-width: 600px;
+    word-wrap: break-word;
+}

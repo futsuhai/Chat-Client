@@ -1,0 +1,32 @@
+.checkbox {
+    display: flex;
+
+    &__label {
+        margin-top: 4px;
+        margin-left: 30px;
+    }
+}
+
+.check {
+    &__input {
+        position: absolute;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    &__box {
+        cursor: pointer;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 0.05em;
+        box-shadow: 0 0 0 0.1em var(--gray);
+    }
+}
+
+.check__input:checked+.check__box {
+    background-color: var(--violet-primary);
+    box-shadow: 0 0 0 0.1em var(---violet-primary);
+    background-image: url("/assets/common/checked.svg");
+}

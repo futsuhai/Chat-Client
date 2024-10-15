@@ -1,0 +1,83 @@
+<div class="auth-form-wrapper login-form-component__auth-form-wrapper">
+    <app-logo></app-logo>
+    <div class="main">
+        <p class="main__title">
+            Welcome, login to your account!
+        </p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()" class="auth-form">
+        <div class="auth-inputs">
+            <div class="form-group">
+                <label for="login" class="form-group__label">Login</label>
+                <input 
+                    formControlName="login" 
+                    id="login" type="text" 
+                    class="input_base input_auth form-group__input"
+                    [ngClass]="{'input_invalid': (login?.touched && login?.invalid)}">
+                <span 
+                    [hidden]="login?.valid || login?.untouched" 
+                    class="form-group__alert">
+                        <ng-container *ngIf="login?.hasError('required')">
+                            Field is required
+                        </ng-container>
+                        <ng-container *ngIf="login?.hasError('minlength')">
+                            Minimum length of login is 4 characters
+                        </ng-container>
+                        <ng-container *ngIf="login?.hasError('maxlength')">
+                            Maximum length of login is 12 characters
+                        </ng-container>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-group__label">Password</label>
+                <input 
+                    formControlName="password"
+                    id="password" type="password" 
+                    class="input_base input_auth form-group__input"
+                    [ngClass]="{'input_invalid': (password?.touched && password?.invalid)}">
+                <span 
+                    [hidden]="password?.valid || password?.untouched" 
+                    class="form-group__alert">
+                        <ng-container *ngIf="password?.hasError('required')">
+                            Field is required
+                        </ng-container>
+                        <ng-container *ngIf="password?.hasError('pattern')">
+                            Password is incorrect
+                        </ng-container>
+                </span>
+            </div>
+        </div>
+        <span 
+            [hidden]="!(login || password)?.hasError('unauthorized')" 
+            class="form-group__alert">
+                Неверный логин или пароль
+        </span>
+        <div class="account-options auth-form__account-options">
+            <div class="checkbox">
+                <label class="check">
+                    <input formControlName="remember" class="check__input" type="checkbox" id="checkbox">
+                    <span class="check__box"></span>
+                </label>
+                <p class="checkbox__label">
+                    Remember me
+                </p>
+            </div>
+            <a href="#" class="account-options__password">
+                Forgot password?
+            </a>
+        </div>
+        <div class="button-wrapper">
+            <button type="submit" class="button-wrapper__button button_primary">
+                Login now
+            </button>
+        </div>
+        <div class="auth-navigate">
+            <p class="auth-navigate__text">
+                Don't have an account yet?
+            </p>
+            <button type="button" class="auth-navigate__button button_empty" (click)="switchForm()">
+                Sign up!
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+@import "src/app/styles/mixins";
+
+.register-form-component {
+    &__auth-form-wrapper {
+        padding: 40px;
+    }
+
+    &__stepper {
+        width: 100%;
+    }
+}

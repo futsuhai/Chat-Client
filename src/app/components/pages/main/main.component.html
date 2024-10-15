@@ -1,0 +1,13 @@
+<div class="test">
+    <p>Main page</p>
+    <p>Logined {{ account.login }}</p>
+    <p class="t">AccessToken: {{ account.tokens.accessToken }}</p>
+    <p class="t">RefreshToken: {{ account.tokens.refreshToken }}</p>
+    <button type="button" (click)="refreshTokens()">
+        Refresh Tokens
+    </button>
+    <button type="button" (click)="logout()">
+        Quit
+    </button>
+</div>
+

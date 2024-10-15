@@ -1,0 +1,30 @@
+.stepper-component {
+    &__step {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid var(--violet-primary);
+        color: var(--violet-primary);
+
+        &_active {
+            background: var(--violet-primary);
+            color: var(--white);
+        }
+    }
+
+    &__divider {
+        height: 2px;
+        background: var(--violet-primary);
+        border: 1px solid var(--violet-primary);
+    }
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider {
+    flex-grow: 1;
+}

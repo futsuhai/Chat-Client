@@ -1,0 +1,26 @@
+<div class="auth-form-wrapper register-form-component__auth-form-wrapper">
+    <app-logo></app-logo>
+    <app-stepper [currentStage]="currentStage" class="register-form-component__stepper">
+    </app-stepper>
+    <div class="auth-form">
+        <ng-container [ngSwitch]="currentStage">
+            <ng-container *ngSwitchCase="1">
+                <app-register-form-basic (incrementStage)="incrementStage()"></app-register-form-basic>
+            </ng-container>
+            <ng-container *ngSwitchCase="2">
+                <app-register-form-addictional (incrementStage)="incrementStage()" (decrementStage)="decrementStage()"></app-register-form-addictional>
+            </ng-container>
+            <ng-container *ngSwitchCase="3">
+                <app-register-form-spec (incrementStage)="incrementStage()" (decrementStage)="decrementStage()"></app-register-form-spec>
+            </ng-container>
+        </ng-container>
+        <div class="auth-navigate">
+            <p class="auth-navigate__text">
+                You already have an account?
+            </p>
+            <button type="button" class="auth-navigate__button button_empty" (click)="switchForm()">
+                Log in!
+            </button>
+        </div>
+    </div>
+</div>

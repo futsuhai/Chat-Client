@@ -1,0 +1,67 @@
+// Variables breakpoints
+$xs: 0px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// Standart breakpoints
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin sm {
+    @media screen and (max-width: $sm) {
+        @content
+    }
+};
+// Small devices (landscape phones, less than 768px)
+@mixin md {
+    @media screen and (max-width: $md) {
+        @content
+    }
+};
+// Medium devices (tablets, less than 992px)
+@mixin lg {
+    @media screen and (max-width: $lg) {
+        @content
+    }
+};
+// Large devices (desktops, less than 1200px)
+@mixin xl {
+    @media screen and (max-width: $xl) {
+        @content
+    }
+};
+// X-Large devices (large desktops, less than 1400px)
+@mixin xxl {
+    @media screen and (max-width: $xxl) {
+        @content
+    }
+};
+
+// Between breakpoints
+
+// 576px-768px
+@mixin between_sm-md {
+    @media screen and (min-width: $sm ) and (max-width: $md) {
+        @content
+    }
+};
+// 768px-992px
+@mixin between_md-lg {
+    @media screen and (min-width: $md ) and (max-width: $lg) {
+        @content
+    }
+};
+// 992px-1200px
+@mixin between_lg-xl {
+    @media screen and (min-width: $lg ) and (max-width: $xl) {
+        @content
+    }
+};
+// 1200px-1400px
+@mixin between_xl-xxl {
+    @media screen and (min-width: $xl ) and (max-width: $xxl) {
+        @content
+    }
+};
